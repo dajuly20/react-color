@@ -8,7 +8,7 @@ import SketchFields from './SketchFields'
 import SketchPresetColors from './SketchPresetColors'
 
 export const Sketch = ({ width, rgb, hex, hsv, hsl, onChange, onSwatchHover,
-  disableAlpha, presetColors, renderers, styles: passedStyles = {}, className = '' }) => {
+  disableAlpha, presetColors, renderers, styles: passedStyles = {}, className = '', children }) => {
   const styles = reactCSS(merge({
     'default': {
       picker: {
@@ -132,6 +132,7 @@ export const Sketch = ({ width, rgb, hex, hsv, hsl, onChange, onSwatchHover,
         onClick={ onChange }
         onSwatchHover={ onSwatchHover }
       />
+      {...children}
     </div>
   )
 }
